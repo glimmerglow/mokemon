@@ -63,3 +63,4 @@ crashlytics-build.properties
 mono_crash.*
 .DS_Store
 .vsconfig
+Assets/Plugins/AllIn1SpriteShader/2DRenderer-URP-Package*
