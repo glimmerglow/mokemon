@@ -62,3 +62,4 @@ crashlytics-build.properties
 
 mono_crash.*
 .DS_Store
+.vsconfig
