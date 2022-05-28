@@ -4,15 +4,44 @@ using UnityEngine;
 
 public class Mokemon : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int mokeNumber;
+    public MokeDex.MokeDexInfo mokeDexInfo;
+    public string mokeName;
+    public string type;
+
+    public int baseHP;
+
+    public int hp;
+    public int attack;
+    public int defense;
+    public int spAtk;
+    public int spDef;
+    public int speed;
+
+    void Awake()
     {
-        
+        Init();
     }
 
-    // Update is called once per frame
-    void Update()
+    void Init()
     {
-        
+        MokeDex.MokeDexInfo mokeDexInfo =  MokeDex.MokeDexDict.GetValueOrDefault(mokeNumber);
+        mokeName = mokeDexInfo.Name;
+        type = mokeDexInfo.Type;
+
+        baseHP = mokeDexInfo.Stats.HP;
+        int baseAttack = mokeDexInfo.Stats.Attack;
+        int baseDefense = mokeDexInfo.Stats.Defense;
+        int baseSpAtk = mokeDexInfo.Stats.SpAtk;
+        int baseSpDef = mokeDexInfo.Stats.SpDef;
+        int baseSpeed = mokeDexInfo.Stats.Speed;
+
+        hp = baseHP;
+        attack = baseAttack;
+        defense = baseDefense;
+        spAtk = baseSpAtk;
+        spDef = baseSpDef;
+        speed = baseSpeed;
     }
+
 }
