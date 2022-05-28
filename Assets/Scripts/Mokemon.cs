@@ -2,30 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mokemon : MonoBehaviour
+public class Mokemon
 {
     // public int mokeNumber;
-    public MokeDex.MokeDexInfo mokeDexInfo;
+    private MokeDex.MokeDexInfo mokeDexInfo;
     public string mokeName;
-    public string type;
+    public mokeTypes.mokeType type;
+    public int baseHP, baseAttack, baseDefense, baseSpAtk, baseSpDef, baseSpeed;
+    public int hp, attack, defense, spAtk, spDef, speed;
 
-    public int baseHP;
-
-    public int hp;
-    public int attack;
-    public int defense;
-    public int spAtk;
-    public int spDef;
-    public int speed;
-
-    void Awake()
-    {
-        // Init();
-    }
 
     public void Init(int mokeNumber)
     {
-        MokeDex.MokeDexInfo mokeDexInfo =  MokeDex.MokeDexDict.GetValueOrDefault(mokeNumber);
+        mokeDexInfo =  MokeDex.MokeDexDict.GetValueOrDefault(mokeNumber);
         mokeName = mokeDexInfo.Name;
         type = mokeDexInfo.Type;
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MokeDex : MonoBehaviour
+public class MokeDex
 {
     public class MokeStats
     {
@@ -17,24 +17,16 @@ public class MokeDex : MonoBehaviour
     public class MokeDexInfo
     {
         public string Name { get; set;}
-        public string Type { get; set;}
+        public mokeTypes.mokeType Type { get; set;}
         public MokeStats Stats { get; set;}
     }
     public static Dictionary<int, MokeDexInfo> MokeDexDict = new Dictionary<int, MokeDexInfo>
     {
         {
-            025, new MokeDexInfo { Name = "Pikachu", Type = "Electric", Stats = new MokeStats { HP = 35, Attack = 55, Defense = 40, SpAtk = 50, SpDef = 50, Speed = 90 } }
-        }
+            025, new MokeDexInfo { Name = "Pikachu", Type = mokeTypes.mokeType.Electric, Stats = new MokeStats { HP = 35, Attack = 55, Defense = 40, SpAtk = 50, SpDef = 50, Speed = 90 } }
+        },
+        {
+            150, new MokeDexInfo { Name = "Mewtwo", Type = mokeTypes.mokeType.Psychic, Stats = new MokeStats { HP = 106, Attack = 110, Defense = 90, SpAtk = 154, SpDef = 90, Speed = 130 } }
+        },
     };
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
