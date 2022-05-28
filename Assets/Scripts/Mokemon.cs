@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Mokemon : MonoBehaviour
 {
-    public int mokeNumber;
+    // public int mokeNumber;
     public MokeDex.MokeDexInfo mokeDexInfo;
     public string mokeName;
     public string type;
@@ -20,10 +20,10 @@ public class Mokemon : MonoBehaviour
 
     void Awake()
     {
-        Init();
+        // Init();
     }
 
-    void Init()
+    public void Init(int mokeNumber)
     {
         MokeDex.MokeDexInfo mokeDexInfo =  MokeDex.MokeDexDict.GetValueOrDefault(mokeNumber);
         mokeName = mokeDexInfo.Name;
